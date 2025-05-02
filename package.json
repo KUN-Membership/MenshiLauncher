@@ -1,13 +1,13 @@
 {
-  "name": "numalauncher",
+  "name": "menshilauncher",
   "version": "4.0.4",
-  "productName": "NumaLauncher",
+  "productName": "MenshiLauncher",
   "description": "沼でも使えるMinecraftランチャー",
   "author": "Daniel Scalzi (https://github.com/dscalzi/), TeamKUN (https://github.com/TeamKun/)",
   "license": "UNLICENSED",
-  "homepage": "https://github.com/TeamKun/NumaLauncher",
+  "homepage": "https://github.com/KUN-Membership/MenshiLauncher",
   "bugs": {
-    "url": "https://github.com/TeamKun/NumaLauncher/issues"
+    "url": "https://github.com/KUN-Membership/MenshiLaunche#"
   },
   "private": true,
   "main": "index.js",
@@ -52,7 +52,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TeamKun/NumaLauncher.git"
+    "url": "git+https://github.com/KUN-Membership/MenshiLauncher.git"
   },
   "files": [
     "dist"

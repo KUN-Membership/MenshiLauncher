@@ -49,7 +49,7 @@ if(!isDev){
                 loggerAutoUpdater.info('New update available', info.version)
 
                 if(process.platform === 'darwin'){
-                    info.darwindownload = `https://github.com/TeamKun/NumaLauncher/releases/download/v${info.version}/NumaLauncher-setup-${info.version}.dmg`
+                    info.darwindownload = `https://github.com/KUN-Membership/MenshiLauncher/releases/download/v${info.version}/MenshiLauncher-setup-${info.version}.dmg`
                     showUpdateUI(info)
                 }
 

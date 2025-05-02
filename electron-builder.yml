@@ -1,5 +1,5 @@
-appId: 'numaLauncher'
-productName: 'NumaLauncher'
+appId: 'menshiLauncher'
+productName: 'MenshiLauncher'
 artifactName: '${productName}-setup-${version}.${ext}'
 
 copyright: 'Copyright © 2018-2024 Daniel Scalzi, 2025 TeamKun'
@@ -14,9 +14,9 @@ extraResources:
   - 'libraries'
 
 protocols:
-  - name: 'NumaLauncher Protocol'
+  - name: 'MenshiLauncher Protocol'
     schemes:
-      - 'numalauncher'
+      - 'menshilauncher'
 
 # Windows Configuration
 win:
@@ -45,7 +45,7 @@ linux:
   maintainer: 'TeamKun'
   vendor: 'Daniel Scalzi, TeamKun'
   synopsis: 'Minecraft Modランチャー'
-  description: '沼な人でもModが導入できる、そんなランチャーです。'
+  description: ''
   category: 'Game'
 
 directories:

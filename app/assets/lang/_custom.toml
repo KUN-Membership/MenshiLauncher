@@ -1,15 +1,15 @@
 # Custom Language File for Launcher Customizer
 
 [ejs.app]
-title = "沼ランチャー"
+title = "メンシランチャー"
 
 [ejs.landing]
 
 [ejs.settings]
-sourceGithubLink = "https://github.com/TeamKun/NumaLauncher"
-supportLink = "https://discord.gg/kyefhuY5Rd"
+sourceGithubLink = "https://github.com/KUN-Membership/MenshiLauncher"
+supportLink = ""
 
 [ejs.welcome]
-welcomeHeader = "ようこそ、沼ランチャーへ"
-welcomeDescription = "沼な人でもModが導入できる、そんなランチャーです。"
-welcomeDescCTA = "数クリックでマイクラ参加型へ参加する準備が整います。"
+welcomeHeader = "ようこそ、メンシランチャーへ"
+welcomeDescription = "メンシで遊べるModが導入できる、そんなランチャーです。"
+welcomeDescCTA = "数クリックで準備が整います。"

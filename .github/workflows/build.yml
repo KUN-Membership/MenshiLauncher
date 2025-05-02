@@ -61,7 +61,7 @@ jobs:
           name: windows-release
           path: |
             dist/latest*.yml
-            dist/NumaLauncher-setup-${{ steps.get_version.outputs.version-without-v }}*
+            dist/MenshiLauncher-setup-${{ steps.get_version.outputs.version-without-v }}*
 
   release:
     runs-on: ubuntu-latest
@@ -83,10 +83,10 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ steps.get_version.outputs.version }}
-          name: NumaLauncher - ${{ steps.get_version.outputs.version }}
+          name: MenshiLauncher - ${{ steps.get_version.outputs.version }}
           body: |
             ### ▼ご使用のOSのインストーラーをダウンロードしてください。
-            [Windows](https://github.com/${{ github.repository }}/releases/download/${{ steps.get_version.outputs.version }}/NumaLauncher-setup-${{ steps.get_version.outputs.version-without-v }}.exe)
+            [Windows](https://github.com/${{ github.repository }}/releases/download/${{ steps.get_version.outputs.version }}/MenshiLauncher-setup-${{ steps.get_version.outputs.version-without-v }}.exe)
 
             ### ビルド情報
             ${{ steps.get_version.outputs.version }} by ${{ github.actor }}
@@ -94,4 +94,4 @@ jobs:
           prerelease: false
           files: |
             dist/**/latest*.yml
-            dist/**/NumaLauncher-setup-${{ steps.get_version.outputs.version-without-v }}*
+            dist/**/MenshiLauncher-setup-${{ steps.get_version.outputs.version-without-v }}*
