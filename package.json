@@ -1,8 +1,8 @@
 {
   "name": "menshilauncher",
-  "version": "4.0.4",
+  "version": "1.0.0",
   "productName": "MenshiLauncher",
-  "description": "沼でも使えるMinecraftランチャー",
+  "description": "メンバーシップ用Minecraftランチャー",
   "author": "Daniel Scalzi (https://github.com/dscalzi/), TeamKUN (https://github.com/TeamKun/)",
   "license": "UNLICENSED",
   "homepage": "https://github.com/KUN-Membership/MenshiLauncher",

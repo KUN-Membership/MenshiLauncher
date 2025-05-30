@@ -5,7 +5,7 @@
 
 <p align="center">
   <a href="https://github.com/KUN-Membership/MenshiLauncher/releases">
-    <img src="https://img.shields.io/github/downloads/TeamKun/NumaLauncher/total.svg?style=for-the-badge" alt="downloads">
+    <img src="https://img.shields.io/github/downloads/KUN-Membership/NumaLauncher/total.svg?style=for-the-badge" alt="downloads">
   </a>
 </p>
 

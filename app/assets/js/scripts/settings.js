@@ -1272,8 +1272,8 @@ async function prepareModsTab(first){
     bindDropinModFileSystemButton()
     bindShaderpackButton()
     bindModsToggleSwitch()
-    bindGenerateURLButton()
-    bindGenerateDiscordStringButton()
+    // bindGenerateURLButton()
+    // bindGenerateDiscordStringButton()
     await loadSelectedServerOnModsTab()
 }
 

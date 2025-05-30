@@ -3807,7 +3807,6 @@ form[name='submitSecretQuestion'] p {
     height: 70px;
     width: auto;
     position: relative;
-    border: 2px solid white;
     box-sizing: border-box;
     border-radius: 50%;
 }
@@ -3815,8 +3814,8 @@ form[name='submitSecretQuestion'] p {
 /* Logo container styles. */
 #image_seal_container {
     position: relative;
-    height: 70px;
-    width: 70px;
+    height: 60px;
+    width: 60px;
     border-radius: 50%;
     margin-top: 50px;
 }
@@ -4952,51 +4951,9 @@ form[name='submitSecretQuestion'] p {
     justify-content: center;
 }
 
-/* Stationary image for the spinner. */
-
-#loadCenterImage {
-    position: absolute;
-    width: 277px;
-    height: auto;
-    z-index: 402;
-}
-
-/* Rotating image for the spinner. */
-
-#loadSpinnerImage {
+#LoadingLogo {
     width: 280px;
-    height: auto;
-    z-index: 401;
 }
-
-/* Rotating image for the spinner. */
-
-#loadSpinnerImageBack {
-    position: absolute;
-    width: 280px;
-    height: auto;
-    z-index: 400;
-}
-
-/* Rotating animation for the spinner. */
-@keyframes rotating {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes rotatingBack {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(-360deg);
-    }
-}
-
 
 /* Class which is applied when the spinner image is spinning. */
 .rotating {
