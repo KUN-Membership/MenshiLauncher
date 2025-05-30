@@ -482,7 +482,7 @@ async function createWindow() {
     remoteMain.enable(win.webContents)
 
     // 背景画像を取得
-    const url = 'https://raw.githubusercontent.com/TeamKun/ModPacks/deploy/backgrounds'
+    const url = 'https://raw.githubusercontent.com/KUN-Membership/ModPacks/deploy/backgrounds'
     const backgrounds = await got.get(`${url}/list.json`, { responseType: 'json' })
         .then(res => res.body?.map(name => `${url}/${name}`))
         .catch(err => {
