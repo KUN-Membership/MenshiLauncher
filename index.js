@@ -335,9 +335,21 @@ ipcMain.on('get-home-path', (event) => {
 })
 
 
-// Disable hardware acceleration.
+// Hardware acceleration setting.
 // https://electronjs.org/docs/tutorial/offscreen-rendering
-app.disableHardwareAcceleration()
+const configPath = path.join(app.getPath('userData'), 'config.json')
+let hardwareAcceleration = true
+try {
+    if (fs.existsSync(configPath)) {
+        const config = JSON.parse(fs.readFileSync(configPath, 'utf8'))
+        hardwareAcceleration = config.settings?.launcher?.hardwareAcceleration ?? true
+    }
+} catch (e) {
+    // Ignore errors, use default (enabled)
+}
+if (!hardwareAcceleration) {
+    app.disableHardwareAcceleration()
+}
 
 
 const REDIRECT_URI_PREFIX = 'https://login.microsoftonline.com/common/oauth2/nativeclient?'
@@ -378,22 +390,33 @@ ipcMain.on(MSFT_OPCODE.OPEN_LOGIN, (ipcEvent, ...arguments_) => {
     })
 
     msftAuthWindow.webContents.on('did-navigate', (_, uri) => {
+        // 二重処理防止
+        if (msftAuthSuccess) {
+            return
+        }
+
         const query = uri.startsWith(REDIRECT_URI_PREFIX) ? uri.substring(REDIRECT_URI_PREFIX.length)
             : uri.startsWith(REDIRECT_URI_PREFIX_LIVE) ? uri.substring(REDIRECT_URI_PREFIX_LIVE.length)
                 : undefined
 
         if (query) {
-            let queries = query.split('#', 1).toString().split('&')
-            let queryMap = {}
+            // 標準URLパーサを使用
+            const params = new URLSearchParams(query.split('#')[0])
+            const queryMap = {}
+            for (const [name, value] of params.entries()) {
+                queryMap[name] = value
+            }
 
-            queries.forEach(query => {
-                const [name, value] = query.split('=')
-                queryMap[name] = decodeURI(value)
-            })
-
-            ipcEvent.reply(MSFT_OPCODE.REPLY_LOGIN, MSFT_REPLY_TYPE.SUCCESS, queryMap, msftAuthViewSuccess, msftAuthViewMsMcLauncherAuth)
+            // デバッグログ
+            if (queryMap.code) {
+                const codeLen = queryMap.code.length
+                const codeMasked = queryMap.code.substring(0, 5) + '...' + queryMap.code.substring(codeLen - 5)
+                console.log(`[MSAuth] callback: code=${codeMasked}, len=${codeLen}, hasSpace=${queryMap.code.includes(' ')}`)
+            }
 
             msftAuthSuccess = true
+            ipcEvent.reply(MSFT_OPCODE.REPLY_LOGIN, MSFT_REPLY_TYPE.SUCCESS, queryMap, msftAuthViewSuccess, msftAuthViewMsMcLauncherAuth)
+
             msftAuthWindow.close()
             msftAuthWindow = null
         }
