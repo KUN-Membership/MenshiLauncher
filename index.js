@@ -16,7 +16,7 @@ const fs                                = require('fs')
 const fsExtra                           = require('fs-extra')
 const crypto                            = require('crypto')
 
-app.setAsDefaultProtocolClient('numalauncher')
+app.setAsDefaultProtocolClient('menshiluncher')
 
 let deepLinkUrl = null
 let win
@@ -25,8 +25,8 @@ const gotLock = app.requestSingleInstanceLock()
 if (!gotLock) {
     app.quit()
 } else {
-    app.on('second-instance', (event, argv, workingDirectory) => {
-        const deeplinkArg = argv.find(arg => arg.startsWith('numalauncher://'))
+    app.on('second-instance', (_event, argv, _workingDirectory) => {
+        const deeplinkArg = argv.find(arg => arg.startsWith('menshiluncher://'))
 
         if (deeplinkArg) {
             if (win) {
@@ -50,7 +50,7 @@ app.on('open-url', (event, url) => {
 // URI起動win用
 app.on('ready', () => {
     const args = process.argv
-    deepLinkUrl = args.find(arg => arg.startsWith('numalauncher://'))
+    deepLinkUrl = args.find(arg => arg.startsWith('menshiluncher://'))
 })
 
 // アプリ準備ができたら
