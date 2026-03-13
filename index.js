@@ -16,7 +16,7 @@ const fs                                = require('fs')
 const fsExtra                           = require('fs-extra')
 const crypto                            = require('crypto')
 
-app.setAsDefaultProtocolClient('menshiluncher')
+app.setAsDefaultProtocolClient('menshilauncher')
 
 let deepLinkUrl = null
 let win
@@ -26,7 +26,7 @@ if (!gotLock) {
     app.quit()
 } else {
     app.on('second-instance', (_event, argv, _workingDirectory) => {
-        const deeplinkArg = argv.find(arg => arg.startsWith('menshiluncher://'))
+        const deeplinkArg = argv.find(arg => arg.startsWith('menshilauncher://'))
 
         if (deeplinkArg) {
             if (win) {
@@ -50,7 +50,7 @@ app.on('open-url', (event, url) => {
 // URI起動win用
 app.on('ready', () => {
     const args = process.argv
-    deepLinkUrl = args.find(arg => arg.startsWith('menshiluncher://'))
+    deepLinkUrl = args.find(arg => arg.startsWith('menshilauncher://'))
 })
 
 // アプリ準備ができたら
