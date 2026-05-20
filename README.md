@@ -24,3 +24,47 @@ ctrl + shift + i
 ```
 
 ![console example](https://i.imgur.com/T5e73jP.png)
+
+
+## Development
+
+### Getting Started
+
+**System Requirements**
+
+* [Node.js][nodejs] v22
+
+---
+
+**Clone and Install Dependencies**
+
+```console
+> git clone https://github.com/KUN-Membership/MenshiLauncher.git
+> cd MenshiLauncher
+> npm install
+```
+
+---
+
+**Launch Application**
+
+```console
+> npm start
+```
+
+---
+
+**Build Installers**
+
+STEP1. <a src="https://github.com/TeamKun/config-files/releases">jdk.zip</a>をダウンロードしプロジェクトルートに展開
+
+STEP2. プラットフォームごとにコマンドを下記実行
+
+| Platform    | Command            |
+| ----------- | ------------------ |
+| Windows x64 | `npm run dist:win` |
+| macOS       | `npm run dist:mac` |
+
+!! mac OS用のインストーラはIntel,AppleSiliconそれぞれのプロセッサごとに実機でbuildが必要
+
+---
